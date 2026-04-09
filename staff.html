@@ -92,7 +92,7 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 .b-exp:hover{background:#001f5e;}
 .b-lock{display:inline-flex;align-items:center;gap:5px;height:38px;padding:0 12px;background:#fff0f0;color:#c0392b;border:2px solid #e8b4b4;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;-webkit-appearance:none;}
 .b-lock:hover{background:#fde0e0;}
-.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;}
+.sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px;}
 .sc{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid #e0e6f0;}
 .sl{font-size:11px;font-weight:700;color:#8899bb;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
 .sv{font-family:'Nunito',sans-serif;font-weight:800;font-size:24px;color:#00133D;}
@@ -173,8 +173,8 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 
     <div class="sgrid">
       <div class="sc"><div class="sl">Total Applications</div><div class="sv blue" id="s-tot">0</div><div class="ss">All time</div></div>
-      <div class="sc"><div class="sl">Pending Review</div><div class="sv" id="s-pen">0</div><div class="ss">Awaiting action</div></div>
-      <div class="sc"><div class="sl">Approved / Active</div><div class="sv" id="s-act">0</div><div class="ss">Active savers</div></div>
+      <div class="ss">Awaiting action</div></div>
+      <div class="ss">Active savers</div></div>
       <div class="sc"><div class="sl">Monthly (GHS)</div><div class="sv blue" id="s-amt">0</div><div class="ss">Total committed</div></div>
     </div>
 
@@ -182,10 +182,7 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
       <div class="sbar"><div class="sdot sync" id="sdot"></div><span id="slbl">Loading...</span></div>
       <div class="toolbar">
         <input class="srch" type="search" id="q" placeholder="Search name, employee no, department..." oninput="render()">
-        <select class="fsel" id="fs" onchange="render()">
-          <option value="">All Statuses</option>
-          <option>Pending</option><option>Active</option><option>Under Review</option>
-        </select>
+        
         <select class="fsel" id="ft" onchange="render()">
           <option value="">All Tiers</option>
           <option value="BaySaver Smart">Smart</option>
@@ -285,26 +282,23 @@ function loadData(){
 
 function updateStats(){
   document.getElementById('s-tot').textContent=apps.length;
-  document.getElementById('s-pen').textContent=apps.filter(a=>a.Status==='Pending').length;
-  document.getElementById('s-act').textContent=apps.filter(a=>a.Status==='Active').length;
+  
   const amt=apps.reduce((s,a)=>s+a.monthly,0);
   document.getElementById('s-amt').textContent=amt.toLocaleString();
 }
 
 function render(){
   const q=document.getElementById('q').value.toLowerCase();
-  const fs=document.getElementById('fs').value;
   const ft=document.getElementById('ft').value;
   const d=apps.filter(a=>{
     const n=(a.surname+' '+a.otherNames).toLowerCase();
     return(!q||n.includes(q)||(a.empNo).toLowerCase().includes(q)||(a.dept).toLowerCase().includes(q)||(a.ref).toLowerCase().includes(q))
-      &&(!fs||a.Status===fs)&&(!ft||a.tier===ft);
+      &&(!ft||a.tier===ft);
   });
   const w=document.getElementById('tbl');
   if(!d.length){w.innerHTML='<div class="empty">'+(apps.length?'No matches found.':'No applications yet.')+'</div>';return;}
   const tc=t=>t==='BaySaver Smart'?'ts':t==='BaySaver Prime'?'tp':'tv';
-  const sc=s=>s==='Active'?'ba':s==='Pending'?'bp':'br';
-  w.innerHTML='<table class="dt"><thead><tr><th>Ref</th><th>Name</th><th>Emp No.</th><th>Dept</th><th>Tier</th><th>Monthly (GHS)</th><th>Mode</th><th>Status</th><th>Date</th></tr></thead><tbody>'
+    w.innerHTML='<table class="dt"><thead><tr><th>Ref</th><th>Name</th><th>Emp No.</th><th>Dept</th><th>Tier</th><th>Monthly (GHS)</th><th>Mode</th><th>Date</th></tr></thead><tbody>'
     +d.map(a=>`<tr>
       <td style="font-size:11px;color:#8899bb;font-weight:700;">${a.ref}</td>
       <td style="font-weight:700;">${a.surname}, ${a.otherNames}</td>
@@ -312,15 +306,14 @@ function render(){
       <td><span class="ttag ${tc(a.tier)}">${a.tier.replace('BaySaver ','')}</span></td>
       <td style="font-weight:700;">${a.monthly.toLocaleString()}</td>
       <td style="font-size:12px;">${a.mode}</td>
-      <td><span class="badge ${sc(a.Status)}">${a.Status}</span></td>
       <td style="font-size:12px;color:#aab5cc;">${a.date}</td>
     </tr>`).join('')+'</tbody></table>';
 }
 
 function exportCSV(){
   if(!apps.length){toast('No data to export yet.','t-bad');return;}
-  const h=['Ref','Surname','Other Names','Emp No','Dept','Tier','Monthly (GHS)','Duration','Mode','Status','Date','Email'];
-  const rows=apps.map(a=>[a.ref,a.surname,a.otherNames,a.empNo,a.dept,a.tier,a.monthly,a.duration,a.mode,a.Status,a.date,a.email]);
+  const h=['Ref','Surname','Other Names','Emp No','Dept','Tier','Monthly (GHS)','Duration','Mode','Date','Email'];
+  const rows=apps.map(a=>[a.ref,a.surname,a.otherNames,a.empNo,a.dept,a.tier,a.monthly,a.duration,a.mode,a.date,a.email]);
   const csv=[h,...rows].map(r=>r.map(v=>'"'+(v||'').toString().replace(/"/g,'""')+'"').join(',')).join('\n');
   const el=document.createElement('a');
   el.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
