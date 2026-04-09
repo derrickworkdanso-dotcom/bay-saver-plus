@@ -79,10 +79,10 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 
 <div class="hero">
   <h1>Bay Saver <span>Plus</span></h1>
-  <p>Save smarter. Watch your money grow with competitive compound interest rates designed for every Bayporteer.</p>
+  <p>Save smarter. Watch your money grow with competitive interest rates designed for every Bayporteer.</p>
   <div class="pills">
     <span class="pill">From GHS 200/mo</span>
-    <span class="pill">Compound Interest</span>
+    <span class="pill">Competitive Interest</span>
     <span class="pill">Multiple Goals</span>
     <span class="pill">Top-Ups Allowed</span>
   </div>
@@ -97,8 +97,24 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
       <div class="ff"><label>Surname *</label><input type="text" id="f-sn" placeholder="e.g. Mensah" autocomplete="family-name"></div>
       <div class="ff"><label>Other Names *</label><input type="text" id="f-on" placeholder="e.g. Kwame Boateng" autocomplete="given-name"></div>
       <div class="ff"><label>Employee Number *</label><input type="text" id="f-en" placeholder="e.g. BP-00123" autocomplete="off"></div>
-      <div class="ff"><label>Department *</label><input type="text" id="f-dp" placeholder="e.g. Sales &amp; Marketing"></div>
-      <div class="ff s2"><label>Email Address *</label><input type="email" id="f-em" placeholder="your.email@bayportghana.com" inputmode="email" autocomplete="email"></div>
+      <div class="ff"><label>Department *</label>
+<select id="f-dp">
+  <option value="">Select department...</option>
+  <option>Brands, Marketing and Communication</option>
+  <option>People and Culture</option>
+  <option>Commercial and Projects</option>
+  <option>Credit and Operations</option>
+  <option>Call Centre Sales</option>
+  <option>Technology</option>
+  <option>Operational Risk and Financial Crime</option>
+  <option>Corporate and Retail Deposit</option>
+  <option>Risk and Assurance</option>
+  <option>Corporate Services</option>
+  <option>Collections &amp; Account Management</option>
+  <option>Internal Audit</option>
+  <option>Business Intelligence</option>
+</select></div>
+      <div class="ff s2"><label>Email Address</label><input type="email" id="f-em" placeholder="your.email@bayportghana.com" inputmode="email" autocomplete="email"></div>
       <div class="ff"><label>Employment Date</label><input type="date" id="f-ed"></div>
     </div>
   </div>
@@ -131,38 +147,27 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
       <div class="ff s2">
         <label>Duration of Deduction</label>
         <div class="cg" id="dur">
-          <div class="co" onclick="selC('dur',this)">Regular</div>
-          <div class="co on" onclick="selC('dur',this)">6 Months</div>
-          <div class="co" onclick="selC('dur',this)">12 Months</div>
-          <div class="co" onclick="selC('dur',this)">24 Months</div>
+          <div class="co on">6 Months</div>
         </div>
       </div>
       <div class="ff s2">
         <label>Mode of Deduction</label>
         <div class="rg" id="mod">
           <div class="ro on" onclick="selR('mod',this)"><div class="rd"></div><div class="rl">MyMoney</div></div>
-          <div class="ro" onclick="selR('mod',this)"><div class="rd"></div><div class="rl">From Source</div></div>
-          <div class="ro" onclick="selR('mod',this)"><div class="rd"></div><div class="rl">Standing Order</div></div>
-        </div>
+          <div class="ro" onclick="selR('mod',this)"><div class="rd"></div><div class="rl">From Source (Payroll)</div></div>
+          </div>
       </div>
       <div class="ff"><label>Savings Goal / Label</label><input type="text" id="f-gl" placeholder="e.g. Car, Holiday, School"></div>
     </div>
   </div>
 
-  <!-- 4. Payroll -->
-  <div class="sec">
-    <div class="sec-ttl"><span class="snum">4</span> Payroll Customers Only</div>
-    <div class="fg">
-      <div class="ff"><label>Mandate Number</label><input type="text" id="f-mn" placeholder="Optional"></div>
-      <div class="ff"><label>PIN</label><input type="password" id="f-pin" placeholder="Optional" maxlength="6"></div>
-    </div>
-  </div>
+  
 
   <!-- Submit -->
   <div class="sec" style="background:#fafbfd;">
     <button class="sbtn" id="sbtn" onclick="doSubmit()">Submit Bay Saver Plus Application</button>
     <p style="text-align:center;font-size:12px;color:#aab5cc;margin-top:12px;">
-      For enquiries: <strong style="color:#6b7a99;">baysaverplus@bayportghana.com</strong>
+      For enquiries: <strong style="color:#6b7a99;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e684879f9587908394968a9395a684879f96899492818e878887c885898b">[email&#160;protected]</a></strong>
     </p>
   </div>
 </div>
@@ -175,7 +180,7 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
   <h2>Application Submitted!</h2>
   <p>Your application has been received and saved. A confirmation email is on its way to you.</p>
   <div class="refbox" id="ref-num">BSP-000000</div>
-  <p style="font-size:13px;">Contact <strong>baysaverplus@bayportghana.com</strong> for any queries.</p>
+  <p style="font-size:13px;">Contact <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f09291898391869582809c8583b0929189809f82849798919e91de939f9d">[email&#160;protected]</a></strong> for any queries.</p>
   <button class="sbtn" style="margin-top:16px;" onclick="doReset()">Submit Another Application</button>
 </div>
 
@@ -184,7 +189,7 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 </div>
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 window._tier = 'BaySaver Smart';
 
 function selTier(el,n){document.querySelectorAll('.tc').forEach(c=>c.classList.remove('on'));el.classList.add('on');window._tier=n;}
@@ -229,8 +234,8 @@ async function doSubmit(){
   const dp=document.getElementById('f-dp').value.trim();
   const em=document.getElementById('f-em').value.trim();
   const mc=document.getElementById('f-mc').value.trim();
-  if(!sn||!on||!en||!dp||!em||!mc){toast('Please fill in all required fields (*)','t-bad');return;}
-  if(!em.includes('@')){toast('Please enter a valid email address','t-bad');return;}
+  if(!sn||!on||!en||!dp||!mc){toast('Please fill in all required fields (*)','t-bad');return;}
+  if(em&&!em.includes('@')){toast('Please enter a valid email address','t-bad');return;}
   if(parseFloat(mc)<200){toast('Minimum monthly contribution is GHS 200','t-bad');return;}
   const ref='BSP-'+Date.now().toString().slice(-6);
   const payload={
@@ -254,16 +259,4 @@ async function doSubmit(){
   document.getElementById('overlay').style.display='none';
   document.getElementById('sbtn').disabled=false;
   document.getElementById('ref-num').textContent=ref;
-  document.getElementById('form-card').style.display='none';
-  document.getElementById('ok-card').style.display='block';
-  window.scrollTo(0,0);
-}
-function doReset(){
-  document.getElementById('form-card').style.display='block';
-  document.getElementById('ok-card').style.display='none';
-  document.querySelectorAll('.card input').forEach(i=>{if(i.type!='hidden')i.value='';});
-  window.scrollTo(0,0);
-}
-</script>
-</body>
-</html>
+  document.getElementById('form-card').style.display='non
