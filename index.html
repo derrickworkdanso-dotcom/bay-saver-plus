@@ -9,8 +9,6 @@
 :root{--navy:#00133D;--blue:#00B0ED;--blue-light:#E6F7FD;--grey:#F2F4F7;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;background:#F2F4F7;min-height:100%;}
-
-/* HEADER */
 .header{background:#00133D;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:50;}
 .header-left{display:flex;align-items:center;gap:8px;}
 .header-logo img{height:38px;width:auto;object-fit:contain;display:block;}
@@ -19,37 +17,24 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 .nav-tab{padding:8px 14px;border-radius:7px;border:none;cursor:pointer;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;transition:all .2s;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);white-space:nowrap;-webkit-appearance:none;touch-action:manipulation;}
 .nav-tab.active{background:#00B0ED;color:#00133D;}
 .nav-tab:hover:not(.active){background:rgba(255,255,255,0.2);color:#fff;}
-
 .view{display:none;}.view.active{display:block;}
-
-/* HERO */
 .form-hero{background:#00133D;padding:32px 20px 44px;text-align:center;}
 .form-hero h1{font-family:'Nunito',sans-serif;font-weight:800;font-size:26px;color:#fff;margin-bottom:6px;}
 .form-hero h1 span{color:#00B0ED;}
 .form-hero p{color:rgba(255,255,255,0.65);font-size:14px;max-width:420px;margin:0 auto 14px;line-height:1.6;}
 .pills{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;}
 .pill{background:rgba(0,176,237,0.15);border:1px solid rgba(0,176,237,0.4);color:#00B0ED;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;}
-
-/* FORM CARD */
 .form-card{max-width:680px;margin:-20px auto 32px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,19,61,.12);}
-.form-section{padding:22px 22px;border-bottom:1px solid #F2F4F7;}
+.form-section{padding:22px;border-bottom:1px solid #F2F4F7;}
 .form-section:last-child{border-bottom:none;}
 .sec-title{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:#00B0ED;margin-bottom:14px;display:flex;align-items:center;gap:7px;}
 .sec-num{background:#00133D;color:#fff;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
 .s2{grid-column:span 2;}
 .form-field label{display:block;font-size:11px;font-weight:700;color:#6b7a99;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px;}
-.form-field input,.form-field select{
-  width:100%;height:46px;padding:0 13px;
-  border:1.5px solid #dde3ef;border-radius:9px;
-  font-family:'Source Sans 3',sans-serif;font-size:16px;/* 16px prevents iOS zoom */
-  color:#00133D;background:#fff;outline:none;appearance:none;-webkit-appearance:none;
-  transition:border-color .18s;
-}
+.form-field input,.form-field select{width:100%;height:46px;padding:0 13px;border:1.5px solid #dde3ef;border-radius:9px;font-family:'Source Sans 3',sans-serif;font-size:16px;color:#00133D;background:#fff;outline:none;appearance:none;-webkit-appearance:none;transition:border-color .18s;}
 .form-field input:focus,.form-field select:focus{border-color:#00B0ED;box-shadow:0 0 0 3px rgba(0,176,237,0.1);}
 .form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2300133D' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
-
-/* RADIO / CHECK */
 .rg{display:flex;gap:8px;flex-wrap:wrap;}
 .ro{flex:1;min-width:130px;border:1.5px solid #dde3ef;border-radius:9px;padding:11px 13px;cursor:pointer;touch-action:manipulation;transition:all .18s;display:flex;align-items:center;gap:8px;background:#fff;}
 .ro.selected{border-color:#00B0ED;background:#E6F7FD;}
@@ -60,55 +45,33 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 .cg{display:flex;gap:8px;flex-wrap:wrap;}
 .co{border:1.5px solid #dde3ef;border-radius:9px;padding:9px 14px;cursor:pointer;touch-action:manipulation;font-size:14px;font-weight:600;color:#6b7a99;background:#fff;transition:all .18s;}
 .co.selected{border-color:#00B0ED;background:#E6F7FD;color:#00133D;}
-
-/* TIERS */
 .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 .tc{border:2px solid #dde3ef;border-radius:12px;padding:14px 10px;cursor:pointer;touch-action:manipulation;text-align:center;background:#fff;transition:all .18s;}
 .tc.selected{border-color:#00B0ED;background:#E6F7FD;}
 .tn{font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:#00133D;margin-bottom:4px;}
 .tm{font-size:11px;color:#6b7a99;}
 .tb{font-size:11px;font-weight:700;color:#00B0ED;margin-top:4px;}
-
-/* SUBMIT */
-.submit-btn{
-  width:100%;height:52px;background:#00B0ED;color:#00133D;border:none;border-radius:12px;
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;cursor:pointer;
-  transition:all .2s;touch-action:manipulation;-webkit-appearance:none;
-}
+.submit-btn{width:100%;height:52px;background:#00B0ED;color:#00133D;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;cursor:pointer;transition:all .2s;touch-action:manipulation;-webkit-appearance:none;}
 .submit-btn:hover{background:#00c8ff;}
 .submit-btn:active{transform:scale(0.98);}
 .submit-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
-
-/* SUCCESS */
 .success-card{max-width:480px;margin:28px auto;background:#fff;border-radius:16px;padding:36px 28px;text-align:center;box-shadow:0 4px 20px rgba(0,19,61,.1);display:none;}
 .si{width:64px;height:64px;background:#E6F7FD;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
 .success-card h2{font-family:'Nunito',sans-serif;font-weight:800;font-size:22px;color:#00133D;margin-bottom:6px;}
 .success-card p{color:#6b7a99;font-size:14px;line-height:1.6;margin-bottom:16px;}
 .ref-box{background:#F2F4F7;border-radius:10px;padding:14px;font-family:'Nunito',sans-serif;font-weight:700;font-size:20px;color:#00133D;letter-spacing:3px;margin-bottom:20px;}
-
-/* GATE */
 .gate{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 60px);padding:24px;background:#F2F4F7;}
 .gate-card{background:#fff;border-radius:16px;padding:36px 28px;max-width:400px;width:100%;text-align:center;box-shadow:0 4px 24px rgba(0,19,61,.12);}
 .gate-logo{margin:0 auto 20px;display:flex;justify-content:center;}
 .gate-logo img{height:60px;width:auto;object-fit:contain;}
 .gate-card h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:#00133D;margin-bottom:6px;}
 .gate-card p{font-size:13px;color:#6b7a99;margin-bottom:20px;line-height:1.6;}
-.gate-input{
-  width:100%;height:50px;padding:0 14px;border:1.5px solid #dde3ef;border-radius:10px;
-  font-size:16px;color:#00133D;background:#fff;outline:none;text-align:center;letter-spacing:3px;margin-bottom:12px;
-  -webkit-appearance:none;
-}
+.gate-input{width:100%;height:50px;padding:0 14px;border:1.5px solid #dde3ef;border-radius:10px;font-size:16px;color:#00133D;background:#fff;outline:none;text-align:center;letter-spacing:3px;margin-bottom:12px;-webkit-appearance:none;}
 .gate-input:focus{border-color:#00B0ED;box-shadow:0 0 0 3px rgba(0,176,237,.1);}
-.gate-btn{
-  width:100%;height:50px;background:#00B0ED;color:#00133D;border:none;border-radius:10px;
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;
-  transition:background .2s;touch-action:manipulation;-webkit-appearance:none;
-}
+.gate-btn{width:100%;height:50px;background:#00B0ED;color:#00133D;border:none;border-radius:10px;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;transition:background .2s;touch-action:manipulation;-webkit-appearance:none;}
 .gate-btn:hover{background:#00c8ff;}
 .gate-btn:active{transform:scale(0.98);}
 .gate-error{font-size:13px;color:#c0392b;background:#fdf0f0;border:1px solid #f5c6c6;border-radius:8px;padding:10px 14px;margin-top:10px;display:none;}
-
-/* DASHBOARD */
 .dash{padding:16px;max-width:1100px;margin:0 auto;}
 .dash-topbar{background:#fff;border-radius:12px;border:1px solid #e0e6f0;padding:14px 16px;display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:10px;flex-wrap:wrap;}
 .dash-title h2{font-family:'Nunito',sans-serif;font-weight:800;font-size:17px;color:#00133D;}
@@ -123,38 +86,31 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 .btn-logout{display:inline-flex;align-items:center;gap:5px;height:38px;padding:0 12px;background:#fff0f0;color:#c0392b;border:2px solid #e8b4b4;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;touch-action:manipulation;-webkit-appearance:none;}
 .btn-logout:hover{background:#fde0e0;}
 .btn-sep{width:1px;height:22px;background:#e0e6f0;flex-shrink:0;}
-
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;}
 .stat-card{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid #e0e6f0;}
 .stat-lbl{font-size:11px;font-weight:700;color:#8899bb;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
 .stat-val{font-family:'Nunito',sans-serif;font-weight:800;font-size:24px;color:#00133D;}
 .stat-val.blue{color:#00B0ED;}
 .stat-sub{font-size:11px;color:#aab5cc;margin-top:2px;}
-
 .tbl-card{background:#fff;border-radius:10px;border:1px solid #e0e6f0;overflow:hidden;}
 .sync-bar{display:flex;align-items:center;gap:7px;font-size:12px;color:#8899bb;padding:7px 16px;border-bottom:1px solid #eef1f7;background:#fafbfd;}
 .sdot{width:8px;height:8px;border-radius:50%;background:#c5cfe0;flex-shrink:0;}
 .sdot.ok{background:#2ecc71;}.sdot.err{background:#e74c3c;}
 .sdot.sync{background:#00B0ED;animation:blink 1s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-
 .tbl-toolbar{padding:11px 14px;border-bottom:1px solid #eef1f7;display:flex;gap:8px;flex-wrap:wrap;}
 .srch{flex:1;min-width:160px;height:36px;padding:0 10px 0 32px;border:1.5px solid #dde3ef;border-radius:8px;font-size:14px;color:#00133D;background:#F2F4F7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%238899bb' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E") no-repeat 9px center;outline:none;-webkit-appearance:none;}
 .fsel{height:36px;padding:0 26px 0 9px;border:1.5px solid #dde3ef;border-radius:8px;font-size:13px;color:#00133D;background:#F2F4F7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5'%3E%3Cpath d='M1 1l3.5 3.5L8 1' stroke='%2300133D' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 7px center;appearance:none;-webkit-appearance:none;outline:none;cursor:pointer;}
-
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .dtbl{width:100%;border-collapse:collapse;font-size:13px;min-width:650px;}
 .dtbl th{background:#f7f9fc;padding:10px 13px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#8899bb;border-bottom:1px solid #eef1f7;white-space:nowrap;}
 .dtbl td{padding:11px 13px;border-bottom:1px solid #f0f3f8;color:#00133D;vertical-align:middle;}
 .dtbl tr:last-child td{border-bottom:none;}
-
 .badge{display:inline-flex;padding:3px 9px;border-radius:10px;font-size:11px;font-weight:700;}
 .bp{background:#fff4de;color:#b37000;}.ba{background:#dcf5ea;color:#0a7a45;}.br{background:#eaeef5;color:#4a5f88;}
 .ttag{display:inline-flex;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;}
 .ts{background:#E6F7FD;color:#0070a8;}.tp{background:#eef0fc;color:#3a47c4;}.tv{background:#f0eafc;color:#6b3bbf;}
 .empty{padding:36px;text-align:center;color:#aab5cc;font-size:14px;}
-
-/* MODAL */
 .modal-bg{position:fixed;inset:0;background:rgba(0,19,61,.55);display:flex;align-items:center;justify-content:center;z-index:200;padding:16px;}
 .modal{background:#fff;border-radius:16px;padding:26px;max-width:520px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.22);max-height:90vh;overflow-y:auto;}
 .modal h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:#00133D;margin-bottom:8px;}
@@ -166,32 +122,24 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 .mbtn-p{flex:1;height:44px;background:#00B0ED;color:#00133D;border:none;border-radius:9px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;touch-action:manipulation;-webkit-appearance:none;}
 .mbtn-p:hover{background:#00c8ff;}
 .mbtn-s{flex:1;height:44px;background:#F2F4F7;color:#6b7a99;border:1.5px solid #dde3ef;border-radius:9px;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:14px;cursor:pointer;touch-action:manipulation;-webkit-appearance:none;}
-
-/* SUBMITTING OVERLAY */
-.overlay{position:fixed;inset:0;background:rgba(0,19,61,.5);display:flex;align-items:center;justify-content:center;z-index:300;display:none;}
+.overlay{position:fixed;inset:0;background:rgba(0,19,61,.5);display:none;align-items:center;justify-content:center;z-index:300;}
 .overlay-box{background:#fff;border-radius:14px;padding:28px 32px;text-align:center;max-width:280px;}
 .spinner{width:40px;height:40px;border:4px solid #E6F7FD;border-top-color:#00B0ED;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px;}
 @keyframes spin{to{transform:rotate(360deg)}}
 .overlay-box p{font-family:'Nunito',sans-serif;font-weight:700;font-size:15px;color:#00133D;}
-
-/* TOAST */
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);padding:12px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:999;opacity:0;transition:all .3s;box-shadow:0 4px 16px rgba(0,0,0,.2);white-space:nowrap;max-width:90vw;text-align:center;}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
 .toast.ok{background:#00133D;color:#fff;}.toast.good{background:#1a5c35;color:#fff;}.toast.bad{background:#7a1515;color:#fff;}
-
-/* MOBILE */
 @media(max-width:600px){
   .nav-tab{padding:7px 10px;font-size:12px;}
   .header-tag{display:none;}
-  .fg{grid-template-columns:1fr;}
-  .s2{grid-column:span 1;}
+  .fg{grid-template-columns:1fr;}.s2{grid-column:span 1;}
   .tier-grid{grid-template-columns:1fr;}
   .stats-grid{grid-template-columns:1fr 1fr;}
   .form-section{padding:18px 16px;}
   .form-card{margin:-18px 12px 24px;border-radius:14px;}
   .btn-row{gap:5px;}
   .dash-topbar{flex-direction:column;align-items:stretch;}
-  .btn-row{justify-content:flex-start;}
 }
 @media(max-width:400px){
   .stats-grid{grid-template-columns:1fr;}
@@ -232,12 +180,11 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
         <div class="form-field"><label>Surname *</label><input type="text" id="f-surname" placeholder="e.g. Mensah" autocomplete="family-name"></div>
         <div class="form-field"><label>Other Names *</label><input type="text" id="f-othernames" placeholder="e.g. Kwame Boateng" autocomplete="given-name"></div>
         <div class="form-field"><label>Employee Number *</label><input type="text" id="f-empno" placeholder="e.g. BP-00123" autocomplete="off"></div>
-        <div class="form-field"><label>Department *</label><input type="text" id="f-dept" placeholder="e.g. Sales &amp; Marketing" autocomplete="organization"></div>
+        <div class="form-field"><label>Department *</label><input type="text" id="f-dept" placeholder="e.g. Sales &amp; Marketing"></div>
         <div class="form-field s2"><label>Email Address *</label><input type="email" id="f-email" placeholder="your.email@bayportghana.com" autocomplete="email" inputmode="email"></div>
         <div class="form-field"><label>Employment Date</label><input type="date" id="f-empdate"></div>
       </div>
     </div>
-
     <div class="form-section">
       <div class="sec-title"><span class="sec-num">2</span> Choose Your Savings Tier</div>
       <div class="tier-grid">
@@ -246,7 +193,6 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
         <div class="tc" onclick="selTier(this,'BaySaver Vault')"><div class="tn">BaySaver Vault</div><div class="tm">Min: GHS 10,000</div><div class="tb">Group of 3+</div></div>
       </div>
     </div>
-
     <div class="form-section">
       <div class="sec-title"><span class="sec-num">3</span> Savings Options</div>
       <div class="fg">
@@ -281,7 +227,6 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
         <div class="form-field"><label>Savings Goal / Label</label><input type="text" id="f-goal" placeholder="e.g. Car, Holiday, School"></div>
       </div>
     </div>
-
     <div class="form-section">
       <div class="sec-title"><span class="sec-num">4</span> Payroll Customers Only</div>
       <div class="fg">
@@ -289,7 +234,6 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
         <div class="form-field"><label>PIN</label><input type="password" id="f-pin" placeholder="Optional" maxlength="6"></div>
       </div>
     </div>
-
     <div class="form-section" style="background:#fafbfd;">
       <button class="submit-btn" id="submit-btn" onclick="submitForm()">Submit Bay Saver Plus Application</button>
       <p style="text-align:center;font-size:12px;color:#aab5cc;margin-top:12px;">For enquiries: <strong style="color:#6b7a99;">baysaverplus@bayportghana.com</strong></p>
@@ -299,7 +243,7 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
   <div class="success-card" id="success-card">
     <div class="si"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00B0ED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
     <h2>Application Submitted!</h2>
-    <p>Your application has been saved and a confirmation email is on its way to you.</p>
+    <p>Your application has been received. A confirmation email is on its way to you.</p>
     <div class="ref-box" id="ref-num">BSP-000000</div>
     <p style="font-size:13px;">Contact <strong>baysaverplus@bayportghana.com</strong> for any queries.</p>
     <button class="submit-btn" style="margin-top:16px;" onclick="resetForm()">Submit Another Application</button>
@@ -346,14 +290,12 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
           </button>
         </div>
       </div>
-
       <div class="stats-grid">
         <div class="stat-card"><div class="stat-lbl">Total Applications</div><div class="stat-val blue" id="st-total">0</div><div class="stat-sub">All time</div></div>
         <div class="stat-card"><div class="stat-lbl">Pending Review</div><div class="stat-val" id="st-pend">0</div><div class="stat-sub">Awaiting action</div></div>
         <div class="stat-card"><div class="stat-lbl">Approved / Active</div><div class="stat-val" id="st-act">0</div><div class="stat-sub">Active savers</div></div>
         <div class="stat-card"><div class="stat-lbl">Monthly (GHS)</div><div class="stat-val blue" id="st-amt">0</div><div class="stat-sub">Total committed</div></div>
       </div>
-
       <div class="tbl-card">
         <div class="sync-bar"><div class="sdot" id="sdot"></div><span id="slabel">Not connected &#x2014; click Setup Google Sheet above</span></div>
         <div class="tbl-toolbar">
@@ -361,9 +303,7 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
           <select class="fsel" id="fstatus" onchange="renderTable()"><option value="">All Statuses</option><option>Pending</option><option>Active</option><option>Under Review</option></select>
           <select class="fsel" id="ftier" onchange="renderTable()"><option value="">All Tiers</option><option value="BaySaver Smart">Smart</option><option value="BaySaver Prime">Prime</option><option value="BaySaver Vault">Vault</option></select>
         </div>
-        <div class="tbl-scroll">
-          <div id="tbl-wrap"><div class="empty">Connect your Google Sheet to see live application data.</div></div>
-        </div>
+        <div class="tbl-scroll"><div id="tbl-wrap"><div class="empty">Connect your Google Sheet to see live data.</div></div></div>
       </div>
     </div>
   </div>
@@ -373,10 +313,10 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
 <div class="modal-bg" id="setup-modal" style="display:none;">
   <div class="modal">
     <h3>Connect Google Sheet</h3>
-    <p>Deploy the Apps Script v2 in your Google Sheet, then paste the Web App URL below.</p>
+    <p>Paste the Web App URL from your deployed Apps Script v3 below.</p>
     <div class="sbadge">Step 1</div>
-    <p style="font-size:13px;margin-bottom:12px;"><strong>Extensions &#x2192; Apps Script</strong> &#x2192; paste script &#x2192; <strong>Deploy &#x2192; New deployment &#x2192; Web app</strong> &#x2192; access: <em>Anyone</em> &#x2192; copy URL.</p>
-    <div class="sbadge">Step 2 &#x2014; Paste URL</div>
+    <p style="font-size:13px;margin-bottom:12px;"><strong>Extensions &#x2192; Apps Script</strong> &#x2192; paste the v3 script &#x2192; <strong>Deploy &#x2192; New deployment &#x2192; Web app</strong> &#x2192; access: <em>Anyone</em> &#x2192; copy URL.</p>
+    <div class="sbadge">Step 2 &#x2014; Paste URL here</div>
     <input type="url" id="script-url" placeholder="https://script.google.com/macros/s/..." inputmode="url">
     <div class="mbtns">
       <button class="mbtn-p" onclick="saveUrl()">Save &amp; Connect</button>
@@ -386,14 +326,9 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
   </div>
 </div>
 
-<!-- SUBMITTING OVERLAY -->
 <div class="overlay" id="overlay">
-  <div class="overlay-box">
-    <div class="spinner"></div>
-    <p>Submitting your application...</p>
-  </div>
+  <div class="overlay-box"><div class="spinner"></div><p>Submitting your application...</p></div>
 </div>
-
 <div class="toast" id="toast"></div>
 
 <script>
@@ -407,9 +342,8 @@ function switchView(v, btn) {
   document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
   document.getElementById('view-' + v).classList.add('active');
   btn.classList.add('active');
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
-
 function checkPin() {
   const val = document.getElementById('gate-pin').value;
   if (val === STAFF_PIN) {
@@ -424,20 +358,18 @@ function checkPin() {
     document.getElementById('gate-pin').value = '';
   }
 }
-
 function lockDash() {
   document.getElementById('staff-gate').style.display = 'flex';
   document.getElementById('staff-dash').style.display = 'none';
-  toast('Dashboard locked', 'ok');
+  toast('Dashboard locked','ok');
 }
+function selTier(el,n){ document.querySelectorAll('.tc').forEach(c=>c.classList.remove('selected')); el.classList.add('selected'); tier=n; }
+function selRadio(g,el){ document.querySelectorAll('#'+g+' .ro').forEach(o=>o.classList.remove('selected')); el.classList.add('selected'); }
+function selCheck(g,el){ document.querySelectorAll('#'+g+' .co').forEach(o=>o.classList.remove('selected')); el.classList.add('selected'); }
+function rval(g){ const e=document.querySelector('#'+g+' .ro.selected .rl'); return e?e.textContent.trim():''; }
+function cval(g){ const e=document.querySelector('#'+g+' .co.selected'); return e?e.textContent.trim():''; }
 
-function selTier(el,name){ document.querySelectorAll('.tc').forEach(c=>c.classList.remove('selected')); el.classList.add('selected'); tier=name; }
-function selRadio(gid,el){ document.querySelectorAll('#'+gid+' .ro').forEach(o=>o.classList.remove('selected')); el.classList.add('selected'); }
-function selCheck(gid,el){ document.querySelectorAll('#'+gid+' .co').forEach(o=>o.classList.remove('selected')); el.classList.add('selected'); }
-function rval(gid){ const e=document.querySelector('#'+gid+' .ro.selected .rl'); return e?e.textContent.trim():''; }
-function cval(gid){ const e=document.querySelector('#'+gid+' .co.selected'); return e?e.textContent.trim():''; }
-
-async function submitForm() {
+function submitForm() {
   const surname    = document.getElementById('f-surname').value.trim();
   const otherNames = document.getElementById('f-othernames').value.trim();
   const empNo      = document.getElementById('f-empno').value.trim();
@@ -445,9 +377,7 @@ async function submitForm() {
   const email      = document.getElementById('f-email').value.trim();
   const monthly    = document.getElementById('f-monthly').value.trim();
 
-  if (!surname||!otherNames||!empNo||!dept||!email||!monthly) {
-    toast('Please fill in all required fields (*)','bad'); return;
-  }
+  if (!surname||!otherNames||!empNo||!dept||!email||!monthly) { toast('Please fill in all required fields (*)','bad'); return; }
   if (!email.includes('@')) { toast('Please enter a valid email address','bad'); return; }
   if (parseFloat(monthly) < 200) { toast('Minimum monthly contribution is GHS 200','bad'); return; }
 
@@ -455,103 +385,144 @@ async function submitForm() {
   const payload = {
     ref, date: new Date().toLocaleDateString('en-GB'),
     surname, otherNames, empNo, dept, email,
-    empDate:      document.getElementById('f-empdate').value || '',
+    empDate:     document.getElementById('f-empdate').value || '',
     tier,
-    contribType:  rval('contrib-type'),
-    monthly:      parseFloat(monthly) || 0,
-    initial:      document.getElementById('f-initial').value || '',
-    target:       document.getElementById('f-target').value  || '',
-    duration:     cval('duration-grp'),
-    mode:         rval('deduct-mode'),
-    goal:         document.getElementById('f-goal').value    || '',
-    effDate:      document.getElementById('f-effdate').value || '',
-    mandate:      document.getElementById('f-mandate').value || ''
+    contribType: rval('contrib-type'),
+    monthly:     parseFloat(monthly) || 0,
+    initial:     document.getElementById('f-initial').value || '',
+    target:      document.getElementById('f-target').value  || '',
+    duration:    cval('duration-grp'),
+    mode:        rval('deduct-mode'),
+    goal:        document.getElementById('f-goal').value    || '',
+    effDate:     document.getElementById('f-effdate').value || '',
+    mandate:     document.getElementById('f-mandate').value || ''
   };
 
-  // Show spinner
   document.getElementById('overlay').style.display = 'flex';
   document.getElementById('submit-btn').disabled = true;
 
-  let success = false;
-
   if (scriptUrl) {
-    try {
-      // Use a form-data approach which avoids CORS preflight issues
-      const formData = new FormData();
-      formData.append('data', JSON.stringify(payload));
-
-      const res = await fetch(scriptUrl, {
-        method: 'POST',
-        body: JSON.stringify(payload),
-        mode: 'no-cors' // Apps Script deployed as "Anyone" doesn't need CORS headers for POST
-      });
-      // With no-cors we can't read response — assume success if no error thrown
-      success = true;
-      apps.push({...payload, Status:'Pending'});
-    } catch(err) {
-      console.error('Fetch error:', err);
-      // Still store locally as fallback
-      apps.push({...payload, Status:'Pending'});
-    }
+    // Use a hidden iframe form POST — this completely bypasses CORS
+    // because it's a real form submission, not an XHR/fetch
+    submitViaIframe(payload, ref);
   } else {
     apps.push({...payload, Status:'Pending'});
+    showSuccess(ref);
+    toast('Saved locally \u2014 connect Google Sheet to sync','ok');
   }
+}
 
-  // Hide spinner
+function submitViaIframe(payload, ref) {
+  // Create a hidden iframe as the form target
+  const iframeName = 'submit_frame_' + Date.now();
+  const iframe = document.createElement('iframe');
+  iframe.name = iframeName;
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+
+  // Create a hidden form pointing to the Apps Script URL
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = scriptUrl;
+  form.target = iframeName;
+  form.style.display = 'none';
+
+  // Add all payload fields as hidden inputs
+  // We send each field individually so Apps Script can read e.parameter
+  Object.keys(payload).forEach(key => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = String(payload[key]);
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+
+  // Also store locally as backup
+  apps.push({...payload, Status:'Pending'});
+
+  // Listen for iframe load (indicates form submitted)
+  let submitted = false;
+  iframe.onload = function() {
+    if (!submitted) {
+      submitted = true;
+      setTimeout(() => {
+        document.body.removeChild(iframe);
+        document.body.removeChild(form);
+      }, 1000);
+    }
+  };
+
+  // Submit the form
+  form.submit();
+
+  // Show success after a short delay (don't wait for iframe)
+  setTimeout(() => {
+    showSuccess(ref);
+    toast('Application submitted! Check your email for confirmation.','good');
+  }, 1500);
+}
+
+function showSuccess(ref) {
   document.getElementById('overlay').style.display = 'none';
   document.getElementById('submit-btn').disabled = false;
-
-  // Show success screen
   document.getElementById('ref-num').textContent = ref;
   document.getElementById('signup-form-card').style.display = 'none';
   document.getElementById('success-card').style.display = 'block';
-  window.scrollTo(0, 0);
-
-  if (scriptUrl) {
-    toast('Application submitted! Check your email for confirmation.', 'good');
-  } else {
-    toast('Saved locally \u2014 connect Google Sheet for full sync', 'ok');
-  }
+  window.scrollTo(0,0);
 }
 
 function resetForm() {
   document.getElementById('signup-form-card').style.display = 'block';
   document.getElementById('success-card').style.display = 'none';
   document.querySelectorAll('.form-card input').forEach(i => { if(i.type !== 'hidden') i.value = ''; });
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
 
-async function refreshData() {
+// JSONP fetch — loads data cross-origin via <script> tag
+function refreshData() {
   if (!scriptUrl) { toast('Paste your Script URL in Setup first','bad'); return; }
   setSyncState('sync','Syncing with Google Sheet...');
-  try {
-    const res  = await fetch(scriptUrl, { method: 'GET', mode: 'cors' });
-    const json = await res.json();
-    if (json.success && json.data && json.data.length > 0) {
-      // Map sheet rows to app objects
-      apps = json.data.map(row => ({
-        ref:       row['Reference No.']       || '',
-        date:      row['Date Submitted']      || '',
-        surname:   row['Surname']             || '',
-        otherNames:row['Other Names']         || '',
-        empNo:     row['Employee No.']        || '',
-        dept:      row['Department']          || '',
-        tier:      row['Savings Tier']        || '',
+
+  const cbName = 'bsp_cb_' + Date.now();
+  window[cbName] = function(data) {
+    delete window[cbName];
+    document.head.removeChild(document.getElementById('jsonp_script'));
+    if (data && data.success && data.data) {
+      apps = data.data.map(row => ({
+        ref:       row['Reference No.']        || '',
+        date:      row['Date Submitted']       || '',
+        surname:   row['Surname']              || '',
+        otherNames:row['Other Names']          || '',
+        empNo:     row['Employee No.']         || '',
+        dept:      row['Department']           || '',
+        tier:      row['Savings Tier']         || '',
         monthly:   parseFloat(row['Monthly Amount (GHS)']) || 0,
-        duration:  row['Duration']            || '',
-        mode:      row['Deduction Mode']      || '',
-        Status:    row['Status']              || 'Pending',
+        duration:  row['Duration']             || '',
+        mode:      row['Deduction Mode']       || '',
+        Status:    row['Status']               || 'Pending',
       }));
+      setSyncState('ok','Live \xb7 synced ' + new Date().toLocaleTimeString());
+      document.getElementById('sync-status-text').textContent = 'Connected \xb7 last synced ' + new Date().toLocaleTimeString();
+      toast('Data loaded from Google Sheet','good');
+    } else {
+      setSyncState('err','Error loading data');
+      toast('Error loading sheet data','bad');
     }
-    setSyncState('ok','Live \xb7 synced ' + new Date().toLocaleTimeString());
-    document.getElementById('sync-status-text').textContent = 'Connected \xb7 last synced ' + new Date().toLocaleTimeString();
-    toast('Data loaded from Google Sheet', 'good');
-  } catch(err) {
-    // CORS might still block GET even with headers — show data we have locally
-    setSyncState('ok','Using local data \xb7 ' + new Date().toLocaleTimeString());
-    toast('Using locally cached data', 'ok');
-  }
-  updateStats(); renderTable();
+    updateStats(); renderTable();
+  };
+
+  const script = document.createElement('script');
+  script.id = 'jsonp_script';
+  script.src = scriptUrl + '?callback=' + cbName + '&t=' + Date.now();
+  script.onerror = function() {
+    delete window[cbName];
+    setSyncState('err','Could not reach Google Sheet');
+    toast('Could not reach Google Sheet','bad');
+    updateStats(); renderTable();
+  };
+  document.head.appendChild(script);
 }
 
 function setSyncState(s,lbl) {
@@ -559,7 +530,6 @@ function setSyncState(s,lbl) {
   d.className = 'sdot'+(s==='ok'?' ok':s==='err'?' err':s==='sync'?' sync':'');
   document.getElementById('slabel').textContent = lbl;
 }
-
 function updateStats() {
   document.getElementById('st-total').textContent = apps.length;
   document.getElementById('st-pend').textContent  = apps.filter(a=>(a.Status||'Pending')==='Pending').length;
@@ -567,25 +537,21 @@ function updateStats() {
   const amt = apps.reduce((s,a)=>s+parseFloat(a.monthly||0),0);
   document.getElementById('st-amt').textContent   = amt.toLocaleString();
 }
-
 function renderTable() {
   const q  = document.getElementById('srch').value.toLowerCase();
   const fs = document.getElementById('fstatus').value;
   const ft = document.getElementById('ftier').value;
   const data = apps.filter(a => {
     const n = ((a.surname||'')+' '+(a.otherNames||'')).toLowerCase();
-    return (!q || n.includes(q)||(a.empNo||'').toLowerCase().includes(q)||(a.dept||'').toLowerCase().includes(q)||(a.ref||'').toLowerCase().includes(q))
-      && (!fs||(a.Status||'Pending')===fs) && (!ft||a.tier===ft);
+    return (!q||n.includes(q)||(a.empNo||'').toLowerCase().includes(q)||(a.dept||'').toLowerCase().includes(q)||(a.ref||'').toLowerCase().includes(q))
+      &&(!fs||(a.Status||'Pending')===fs)&&(!ft||a.tier===ft);
   });
   const w = document.getElementById('tbl-wrap');
-  if (!data.length) {
-    w.innerHTML = '<div class="empty">'+(apps.length?'No matches found.':scriptUrl?'No applications yet.':'Connect your Google Sheet to see live data.')+'</div>';
-    return;
-  }
-  const tc = t => t==='BaySaver Smart'?'ts':t==='BaySaver Prime'?'tp':'tv';
-  const sc = s => s==='Active'?'ba':s==='Pending'?'bp':'br';
+  if (!data.length) { w.innerHTML='<div class="empty">'+(apps.length?'No matches found.':scriptUrl?'No applications yet.':'Connect your Google Sheet to see live data.')+'</div>'; return; }
+  const tc = t=>t==='BaySaver Smart'?'ts':t==='BaySaver Prime'?'tp':'tv';
+  const sc = s=>s==='Active'?'ba':s==='Pending'?'bp':'br';
   w.innerHTML = '<table class="dtbl"><thead><tr><th>Ref</th><th>Name</th><th>Emp No.</th><th>Dept</th><th>Tier</th><th>Monthly (GHS)</th><th>Status</th><th>Date</th></tr></thead><tbody>'
-    + data.map(a => `<tr>
+    +data.map(a=>`<tr>
       <td style="font-size:11px;color:#8899bb;font-weight:700;">${a.ref}</td>
       <td style="font-weight:700;">${a.surname||''}, ${a.otherNames||''}</td>
       <td>${a.empNo||''}</td><td>${a.dept||''}</td>
@@ -593,40 +559,36 @@ function renderTable() {
       <td style="font-weight:700;">${(a.monthly||0).toLocaleString()}</td>
       <td><span class="badge ${sc(a.Status||'Pending')}">${a.Status||'Pending'}</span></td>
       <td style="font-size:12px;color:#aab5cc;">${a.date||''}</td>
-    </tr>`).join('') + '</tbody></table>';
+    </tr>`).join('')+'</tbody></table>';
 }
-
 function exportCSV() {
   if (!apps.length) { toast('No data to export yet.','bad'); return; }
-  const h    = ['Ref','Surname','Other Names','Emp No','Dept','Tier','Monthly (GHS)','Duration','Mode','Status','Date'];
+  const h = ['Ref','Surname','Other Names','Emp No','Dept','Tier','Monthly (GHS)','Duration','Mode','Status','Date'];
   const rows = apps.map(a=>[a.ref,a.surname,a.otherNames,a.empNo,a.dept,a.tier,a.monthly,a.duration,a.mode,a.Status||'Pending',a.date]);
-  const csv  = [h,...rows].map(r=>r.map(v=>'"'+(v||'').toString().replace(/"/g,'""')+'"').join(',')).join('\n');
+  const csv = [h,...rows].map(r=>r.map(v=>'"'+(v||'').toString().replace(/"/g,'""')+'"').join(',')).join('\n');
   const el = document.createElement('a');
   el.href = URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
   el.download = 'BaySaverPlus_'+new Date().toISOString().slice(0,10)+'.csv';
   el.click();
   toast('Exported successfully!','good');
 }
-
-function openSetup()  { document.getElementById('setup-modal').style.display='flex'; if(scriptUrl) document.getElementById('script-url').value=scriptUrl; }
+function openSetup() { document.getElementById('setup-modal').style.display='flex'; if(scriptUrl) document.getElementById('script-url').value=scriptUrl; }
 function closeSetup() { document.getElementById('setup-modal').style.display='none'; }
 function saveUrl() {
   const u = document.getElementById('script-url').value.trim();
   if (!u.includes('script.google.com')) { toast('Please paste a valid Apps Script URL','bad'); return; }
   scriptUrl = u;
-  try { localStorage.setItem('bsp_url', u); } catch(e){}
+  try { localStorage.setItem('bsp_url',u); } catch(e){}
   closeSetup();
   setSyncState('ok','Connected \xb7 ready to sync');
   document.getElementById('sync-status-text').textContent = 'Connected to Google Sheet';
-  toast('Google Sheet connected! Refreshing data...','good');
+  toast('Google Sheet connected!','good');
   refreshData();
 }
-
-function toast(msg, type) {
+function toast(msg,type) {
   const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = 'toast show '+(type||'ok');
-  setTimeout(()=>t.className='toast', 3500);
+  t.textContent = msg; t.className = 'toast show '+(type||'ok');
+  setTimeout(()=>t.className='toast',3500);
 }
 </script>
 </body>
