@@ -130,10 +130,8 @@ html,body{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#00133D;ba
       <div class="ff"><label>Effective Date</label><input type="date" id="f-ef"></div>
       <div class="ff s2">
         <label>Duration of Deduction</label>
-        <div class="cg" id="dur"><div class="co on">6 Months</div></div>
-          <div class="co on" onclick="selC('dur',this)">6 Months</div>
-          <div class="co" onclick="selC('dur',this)">12 Months</div>
-          <div class="co" onclick="selC('dur',this)">24 Months</div>
+        <div class="cg" id="dur">
+          <div class="co on">6 Months</div>
         </div>
       </div>
       <div class="ff s2">
@@ -220,29 +218,57 @@ async function doSubmit(){
   const dp=document.getElementById('f-dp').value.trim();
   const em=document.getElementById('f-em').value.trim();
   const mc=document.getElementById('f-mc').value.trim();
-  if(!sn||!on||!en||!dp||!mc){toast('Please fill in all required fields (*)','t-bad');return;}
-  if(em&&!em.includes('@')){toast('Please enter a valid email address','t-bad');return;}
-  if(parseFloat(mc)<200){toast('Minimum monthly contribution is GHS 200','t-bad');return;}
+
+  if(!sn||!on||!en||!dp||!mc){
+    toast('Please fill in all required fields (*)','t-bad');
+    return;
+  }
+  if(em && !em.includes('@')){
+    toast('Please enter a valid email address','t-bad');
+    return;
+  }
+  if(parseFloat(mc) < 200){
+    toast('Minimum monthly contribution is GHS 200','t-bad');
+    return;
+  }
+
   const ref='BSP-'+Date.now().toString().slice(-6);
   const payload={
-    ref, date:new Date().toLocaleDateString('en-GB'),
-    surname:sn, otherNames:on, empNo:en, dept:dp, email:em,
-    empDate:document.getElementById('f-ed').value||'',
-    tier:window._tier||'BaySaver Smart',
+    ref,
+    date:new Date().toLocaleDateString('en-GB'),
+    surname:sn,
+    otherNames:on,
+    empNo:en,
+    dept:dp,
+    email:em,
+    empDate:document.getElementById('f-ed').value || '',
+    tier:window._tier || 'BaySaver Smart',
     contribType:rval('ct'),
-    monthly:parseFloat(mc)||0,
-    initial:document.getElementById('f-ic').value||'',
-    target:document.getElementById('f-ta').value||'',
-    duration:cval('dur'),
+    monthly:parseFloat(mc) || 0,
+    initial:document.getElementById('f-ic').value || '',
+    target:document.getElementById('f-ta').value || '',
+    duration:'6 Months',
     mode:rval('mod'),
-    goal:document.getElementById('f-gl').value||'',
-    effDate:document.getElementById('f-ef').value||'',
-    mandate:document.getElementById('f-mn').value||''
+    goal:document.getElementById('f-gl').value || '',
+    effDate:document.getElementById('f-ef').value || ''
   };
+
   document.getElementById('overlay').style.display='flex';
   document.getElementById('sbtn').disabled=true;
+
   await submitViaIframe(payload);
+
   document.getElementById('overlay').style.display='none';
   document.getElementById('sbtn').disabled=false;
   document.getElementById('ref-num').textContent=ref;
-  document.getElementById('form-card').style.display='non
+  document.getElementById('form-card').style.display='none';
+  document.getElementById('ok-card').style.display='block';
+  toast('Application submitted successfully','t-good');
+}
+
+function doReset(){
+  window.location.reload();
+}
+</script>
+</body>
+</html>
